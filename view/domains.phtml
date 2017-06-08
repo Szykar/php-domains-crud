@@ -1,0 +1,40 @@
+<table width="100%">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nazwa</th>
+        <th>Adres przekierowania</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach($db->getDomains() as $row): ?>
+        <tr id="row_<?=$row[0]?>">
+            <td><?=$row[0]?></td>
+            <td><?=$row[2]?></td>
+            <td><?=$row[3]?></td>
+            <td>
+                <a href="?page=domain&id=<?=$row[0]?>" class="btn">Edytuj</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+<hr>
+<h3>Dodaj domenę</h3>
+<form action="?page=domainInsert" method="post">
+    <table width="100%">
+        <tbody>
+        <tr>
+            <th scope="row">Nazwa</th>
+            <td><input type="text" name="domainName"></td>
+        </tr>
+        <tr>
+            <th scope="row">Adres przekierowania</th>
+            <td><input type="text" name="domainRedirect"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="center">
+        <input type="submit" class="btn" value="Dodaj">
+    </div>
+</form>

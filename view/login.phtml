@@ -1,0 +1,19 @@
+<div class="center">
+<?php
+if(admin()) {
+?>
+    Zalogowany (<a href="?action=logout" class="">Wyloguj</a>)
+<?php
+}
+else {
+?>
+    <h2>Zaloguj się</h2>
+    <form action="?action=login" method="post">
+        <label for="password">Hasło administratora: </label>
+        <input type="password" id="password" name="password" required>
+        <input type="submit" value="Zaloguj się">
+    </form>
+<?php
+}
+?>
+</div>

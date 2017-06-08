@@ -1,0 +1,23 @@
+<?php
+$row = $db->getDomains($id)[0];
+?>
+<form action="?page=domainSave" method="post">
+    <table width="100%">
+        <tbody id="row_<?=$row[0]?>">
+            <tr>
+                <th scope="row">ID</th>
+                <td><input type="text" name="domainId" value="<?=$row[0]?>" readonly="readonly"></td>
+            </tr>
+            <tr>
+                <th scope="row">Nazwa</th>
+                <td><input type="text" name="domainName" value="<?=$row[2]?>"></td>
+            </tr>
+            <tr>
+                <th scope="row">Adres przekierowania</th>
+                <td><input type="text" name="domainRedirect" value="<?=$row[3]?>"></td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="submit" class="btn" value="Zapisz zmiany">
+    <input type="submit" class="btn" value="Usuń" formaction="?page=domainDelete">
+</form>

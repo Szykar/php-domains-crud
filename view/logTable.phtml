@@ -1,0 +1,24 @@
+<table width="100%">
+    <thead>
+        <tr>
+            <th>Data i czas</th>
+            <th>Adres IP</th>
+            <th>User agent</th>
+        </tr>
+    </thead>
+    <tbody>
+<?php foreach($db->getLog() as $row): ?>
+        <tr id="row_<?=$row[0]?>">
+            <td><?=$row[1]?></td>
+            <td><?=$row[2]?></td>
+            <td><?=$row[3]?></td>
+        </tr>
+<?php endforeach; ?>
+    </tbody>
+</table>
+<hr>
+<div class="center">
+    <a href="?page=log&p=<?=$page-1?>"><<</a>
+    Strona: <?=$page?>
+    <a href="?page=log&p=<?=$page+1?>">>></a>
+</div>
